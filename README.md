@@ -66,7 +66,6 @@ config :nerves, :firmware,
 * after this, on loading the new firmware in the board, you shall be able to
 connect to its tty via something like this: `screen /dev/ttyUSB0 115200`.
 
-
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
