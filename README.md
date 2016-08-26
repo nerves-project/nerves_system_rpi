@@ -39,6 +39,34 @@ for your device. At a shell prompt, run `lsmod` to see which drivers are loaded.
 Running `dmesg` may also give a clue. When using `dmesg`, reinsert the USB
 dongle to generate new log messages if you don't see them.
 
+## Accessing IEx terminal via UART / FTDI Cable / `screen`
+
+By default, the raspberry's tty is configured to be available at the HDMI
+output. Another option is to have a FTDI Cable connecting `raspberry <-> host`,
+so you can see the board's output in your own computer. In order to do this,
+you will first have to configure the board's tty to be redirected to the
+UART pins:
+* make a copy of the `cmdline.txt` file and put it under your project's
+`config` folder
+* edit it, adding ` -c ttyAMA0` to the end of the _line_
+* make a copy of the `fwup.conf` file and put it in the `config` folder
+* edit the `file-resource cmdline.txt` directive inside `fwup.conf` to make it
+point to your new `cmdline.txt` file. In the end it shall look like this:
+```
+file-resource cmdline.txt {
+    host-path = "${NERVES_APP}/config/cmdline.txt"
+}
+```
+* edit your project's `config.exs` file, indicating that Nerves should look at
+your new, modified files. Make it look like this:
+```
+config :nerves, :firmware,
+  fwup_conf: "config/fwup.conf"
+```
+* after this, on loading the new firmware in the board, you shall be able to
+connect to its tty via something like this: `screen /dev/ttyUSB0 115200`.
+
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
