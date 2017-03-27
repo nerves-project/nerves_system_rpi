@@ -4,6 +4,12 @@
 This is the base Nerves System configuration for the Raspberry Pi A+, B,
 B+ and Zero. This is not the configuration for the Raspberry Pi 2 or 3.
 
+If you have a Raspberry Pi Zero or Raspberry Pi Zero W, check out [Tim Mecklem's
+Raspberry Pi Zero system](https://github.com/tmecklem/nerves_system_rpi0) and
+his [example project](https://github.com/tmecklem/nerves-zero-example). His
+projects have the USB port configured in OTG mode which is much more convenient
+for many people.
+
 ![Fritzing Raspberry Pi A+ image](assets/images/raspberry-pi-model-a-plus.png)
 <br><sup>[Image credit](#fritzing)</sup>
 
