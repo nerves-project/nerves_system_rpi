@@ -1,14 +1,16 @@
-# Raspberry Pi Model A+, B, B+, and Zero
+# Raspberry Pi Model A+, B, and B+
 [![Build Status](https://travis-ci.org/nerves-project/nerves_system_rpi.png?branch=master)](https://travis-ci.org/nerves-project/nerves_system_rpi)
 
 This is the base Nerves System configuration for the Raspberry Pi A+, B,
-B+ and Zero. This is not the configuration for the Raspberry Pi 2 or 3.
+and B+. It will also work with the Raspberry Pi Zero, but usually
+[nerves_system_rpi0](https://github.com/nerves-project/nerves_system_rpi0) is
+preferable since it configures the USB port so that it can be plugged into
+a computer. This is very convenient for powering and debugging the Pi Zero.
+If you want to use the Raspberry Pi Zero's USB port in "host" mode (e.g.,
+to attach a USB Flash drive or other peripheral), then this repository
+works and may be more appropriate.
 
-If you have a Raspberry Pi Zero or Raspberry Pi Zero W, check out [Tim Mecklem's
-Raspberry Pi Zero system](https://github.com/tmecklem/nerves_system_rpi0) and
-his [example project](https://github.com/tmecklem/nerves-zero-example). His
-projects have the USB port configured in OTG mode which is much more convenient
-for many people.
+This is not the configuration for the Raspberry Pi 2 or 3.
 
 ![Fritzing Raspberry Pi A+ image](assets/images/raspberry-pi-model-a-plus.png)
 <br><sup>[Image credit](#fritzing)</sup>
@@ -47,18 +49,12 @@ dongle to generate new log messages if you don't see them.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+Add `nerves_system_rpi` to your list of dependencies in `mix.exs`:
 
-  1. Add nerves_system_rpi to your list of dependencies in `mix.exs`:
-
-        def deps do
-          [{:nerves_system_rpi, "~> 0.11.0"}]
-        end
-
-  2. Ensure nerves_system_rpi is started before your application:
-
-        def application do
-          [applications: [:nerves_system_rpi]]
-        end
+```elixir
+  def deps do
+    [{:nerves_system_rpi, "~> 0.11.0"}]
+  end
+```
 
 [Image credit](#fritzing): This image is from the [Fritzing](http://fritzing.org/home/) parts library.
