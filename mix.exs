@@ -1,4 +1,4 @@
-defmodule NervesSystemRpi.Mixfile do
+defmodule Nerves.System.Rpi.Mixfile do
   use Mix.Project
 
   @version Path.join(__DIR__, "VERSION")
@@ -13,16 +13,17 @@ defmodule NervesSystemRpi.Mixfile do
      description: description(),
      package: package(),
      deps: deps(),
+     kernel_modules: ["8192cu"],
      aliases: ["deps.precompile": ["nerves.env", "deps.precompile"]]]
   end
 
   def application do
-    []
+    [mod: {Nerves.System.Rpi, []}]
   end
 
   defp deps do
-    [{:nerves, "~> 0.5", runtime: false },
-     {:nerves_system_br, "~> 0.10.0", runtime: false },
+    [{:nerves, "~> 0.5", runtime: false},
+     {:nerves_system_br, "~> 0.10.0", runtime: false},
      {:nerves_toolchain_armv6_rpi_linux_gnueabi, "~> 0.10.0", runtime: false}]
   end
 
