@@ -43,6 +43,7 @@ defmodule NervesSystemRpi.Mixfile do
       {:nerves, "~> 0.8", runtime: false},
       {:nerves_system_br, "~> 0.15.1", runtime: false},
       {:nerves_toolchain_armv6_rpi_linux_gnueabi, "~> 0.12.1", runtime: false},
+      {:nerves_system_linter, "~> 0.2.2", runtime: false}
     ]
   end
 
@@ -70,7 +71,7 @@ defmodule NervesSystemRpi.Mixfile do
       "VERSION",
       "rootfs_overlay",
       "fwup.conf",
-      "cmdline.txt", 
+      "cmdline.txt",
       "linux-4.4.defconfig",
       "config.txt",
       "post-createfs.sh"
