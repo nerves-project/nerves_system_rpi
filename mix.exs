@@ -11,7 +11,7 @@ defmodule NervesSystemRpi.Mixfile do
       app: @app,
       version: @version,
       elixir: "~> 1.4",
-      compilers: Mix.compilers ++ [:nerves_package],
+      compilers: Mix.compilers() ++ [:nerves_package],
       nerves_package: nerves_package(),
       description: description(),
       package: package(),
@@ -27,10 +27,8 @@ defmodule NervesSystemRpi.Mixfile do
   def nerves_package do
     [
       type: :system,
-      version: @version,
-      compiler: :nerves_package,
       artifact_url: [
-        "https://github.com/nerves-project/#{@app}/releases/download/v#{@version}/#{@app}-v#{@version}.tar.gz",
+        "https://github.com/nerves-project/#{@app}/releases/download/v#{@version}/#{@app}-v#{@version}.tar.gz"
       ],
       platform: Nerves.System.BR,
       platform_config: [
@@ -43,8 +41,8 @@ defmodule NervesSystemRpi.Mixfile do
   defp deps do
     [
       {:nerves, "~> 0.8", runtime: false},
-      {:nerves_system_br, "~> 0.15.0", runtime: false, app: false},
-      {:nerves_toolchain_armv6_rpi_linux_gnueabi, "~> 0.12.1", runtime: false, app: false}
+      {:nerves_system_br, "~> 0.15.1", runtime: false},
+      {:nerves_toolchain_armv6_rpi_linux_gnueabi, "~> 0.12.1", runtime: false},
     ]
   end
 
