@@ -20,5 +20,7 @@ dtparam=i2c_arm=on,spi=on
 #       this won't work.
 #dtoverlay=w1-gpio-pullup,gpiopin=4
 
-# Enable the UART (/dev/ttyS0) on the RPi3.
+# Enable the UART via GPIOs 14 and 15 (ttyAMA0) on the RPi0 W.
+# See https://www.raspberrypi.org/documentation/configuration/uart.md.
 enable_uart=1
+dtoverlay=pi3-miniuart-bt
