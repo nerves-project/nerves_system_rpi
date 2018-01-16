@@ -6,7 +6,13 @@
   * [nerves_system_br v0.16.1-2017-11](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.16.1-2017-11)
 
   * Enhancements
-    * Changed `erlinit.config` to reboot instead of hang if the Erlang VM were to exit.
+    * Support for Raspberry Pi 0W
+      This is useful if you want to run the USB port in host mode.
+      nerves_system_rpi0 is biased to running it in gadget mode and lacks many
+      of the USB host drivers and options.
+    * Reboot automatically if Erlang VM exits - This is consistent with other
+      Nerves systems. See rootfs_overlay/etc/erlinit.config if undesired.
+    * Start running nerves_system_linter to check for configuration errors.
     * Disable console blanking for HDMI to make it easier to capture error messages.
     * Automount the boot partition readonly at `/boot`
     * Support for reverting firmware. 
