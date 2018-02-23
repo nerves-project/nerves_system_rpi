@@ -1,5 +1,7 @@
 # Raspberry Pi Model A+, B, and B+
+
 [![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_rpi.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_rpi)
+[![Hex version](https://img.shields.io/hexpm/v/nerves_system_rpi.svg "Hex version")](https://hex.pm/packages/nerves_system_rpi)
 
 This is the base Nerves System configuration for the Raspberry Pi A+, B,
 and B+. It will also work with the Raspberry Pi Zero, but usually
@@ -47,14 +49,21 @@ for your device. At a shell prompt, run `lsmod` to see which drivers are loaded.
 Running `dmesg` may also give a clue. When using `dmesg`, reinsert the USB
 dongle to generate new log messages if you don't see them.
 
+## Linux kernel and RPi firmware/userland
+
+There's a subtle coupling between the `nerves_system_br` version and the Linux
+kernel version used here. `nerves_system_br` provides the versions of
+`rpi-userland` and `rpi-firmware` that get installed. I prefer to match them to
+the Linux kernel to avoid any issues. Unfortunately, none of these are tagged
+by the Raspberry Pi Foundation so I either attempt to match what's in Raspbian
+or take versions of the repositories that have similar commit times.
+
 ## Installation
 
-Add `nerves_system_rpi` to your list of dependencies in `mix.exs`:
-
-```elixir
-  def deps do
-    [{:nerves_system_rpi, "~> 0.11.0"}]
-  end
-```
+If you're new to Nerves, check out the
+[nerves_init_gadget](https://github.com/fhunleth/nerves_init_gadget) project for
+creating a starter project for the Raspberry Pi Zero or Zero W. It will get you
+started with the basics like bringing up the virtual Ethernet interface,
+initializing the application partition, and enabling ssh-based firmware updates.
 
 [Image credit](#fritzing): This image is from the [Fritzing](http://fritzing.org/home/) parts library.
