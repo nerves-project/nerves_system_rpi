@@ -62,18 +62,18 @@ all dongles and selectively install modules at packaging time, but until
 then, these drivers and their associated firmware blobs add significantly
 to Nerves release images.
 
-If you are unsure what driver your WiFi dongle requires, run Raspbian and configure WiFi
-for your device. At a shell prompt, run `lsmod` to see which drivers are loaded.
-Running `dmesg` may also give a clue. When using `dmesg`, reinsert the USB
-dongle to generate new log messages if you don't see them.
+If you are unsure what driver your WiFi dongle requires, run Raspbian and
+configure WiFi for your device. At a shell prompt, run `lsmod` to see which
+drivers are loaded.  Running `dmesg` may also give a clue. When using `dmesg`,
+reinsert the USB dongle to generate new log messages if you don't see them.
 
 ## Linux kernel and RPi firmware/userland
 
 There's a subtle coupling between the `nerves_system_br` version and the Linux
 kernel version used here. `nerves_system_br` provides the versions of
 `rpi-userland` and `rpi-firmware` that get installed. I prefer to match them to
-the Linux kernel to avoid any issues. Unfortunately, none of these are tagged
-by the Raspberry Pi Foundation so I either attempt to match what's in Raspbian
-or take versions of the repositories that have similar commit times.
+the Linux kernel to avoid any issues. Unfortunately, none of these are tagged by
+the Raspberry Pi Foundation so I either attempt to match what's in Raspbian or
+take versions of the repositories that have similar commit times.
 
 [Image credit](#fritzing): This image is from the [Fritzing](http://fritzing.org/home/) parts library.
