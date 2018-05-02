@@ -33,6 +33,17 @@ This is not the configuration for the Raspberry Pi 2 or 3.
 | WiFi                 | Requires USB WiFi dongle        |
 | Bluetooth            | Not supported                   |
 
+## Using
+
+The most common way of using this Nerves System is create a project with `mix
+nerves.new` and to export `MIX_TARGET=rpi`. See the [Getting started
+guide](https://hexdocs.pm/nerves/getting-started.html#creating-a-new-nerves-app)
+for more information.
+
+If you need custom modifications to this system for your device, clone this
+repository and update as described in [Making custom
+systems](https://hexdocs.pm/nerves/systems.html#customizing-your-own-nerves-system)
+
 ## Supported USB WiFi devices
 
 The base image includes drivers and firmware for Ralink RT53xx
