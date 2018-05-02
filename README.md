@@ -22,14 +22,14 @@ This is not the configuration for the Raspberry Pi 2 or 3.
 | CPU                  | 700 MHz ARM1176JZF-S for A+, B, and B+, 1 GHz ARM1176JZF-S for the Zero  |
 | Memory               | 256 MB for rev 1 boards, 512 MB for rev 2 and the Zero  |
 | Storage              | MicroSD                         |
-| Linux kernel         | 4.4.50 w/ Raspberry Pi patches  |
+| Linux kernel         | 4.4 w/ Raspberry Pi patches     |
 | IEx terminal         | HDMI and USB keyboard (can be changed to UART)   |
 | GPIO, I2C, SPI       | Yes - Elixir ALE                |
 | ADC                  | No                              |
 | PWM                  | Yes, but no Elixir support      |
 | UART                 | 1 available - `ttyAMA0`         |
 | Camera               | Yes - via rpi-userland          |
-| Ethernet             | Yes                             |
+| Ethernet             | Yes (only on the B and B+)      |
 | WiFi                 | Requires USB WiFi dongle        |
 | Bluetooth            | Not supported                   |
 
@@ -43,6 +43,13 @@ for more information.
 If you need custom modifications to this system for your device, clone this
 repository and update as described in [Making custom
 systems](https://hexdocs.pm/nerves/systems.html#customizing-your-own-nerves-system)
+
+If you're new to Nerves, check out the
+[nerves_init_gadget](https://github.com/nerves-project/nerves_init_gadget)
+project for creating a starter project. It will get you started with the basics
+like bringing up networking, initializing the writable application data
+partition, and enabling ssh-based firmware updates.  It's easiest to begin by
+using the wired Ethernet interface 'eth0' and DHCP if you have a model B/B+.
 
 ## Supported USB WiFi devices
 
@@ -68,13 +75,5 @@ kernel version used here. `nerves_system_br` provides the versions of
 the Linux kernel to avoid any issues. Unfortunately, none of these are tagged
 by the Raspberry Pi Foundation so I either attempt to match what's in Raspbian
 or take versions of the repositories that have similar commit times.
-
-## Installation
-
-If you're new to Nerves, check out the
-[nerves_init_gadget](https://github.com/fhunleth/nerves_init_gadget) project for
-creating a starter project for the Raspberry Pi Zero or Zero W. It will get you
-started with the basics like bringing up the virtual Ethernet interface,
-initializing the application partition, and enabling ssh-based firmware updates.
 
 [Image credit](#fritzing): This image is from the [Fritzing](http://fritzing.org/home/) parts library.
