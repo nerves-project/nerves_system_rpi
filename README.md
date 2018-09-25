@@ -32,6 +32,7 @@ This is not the configuration for the Raspberry Pi 2 or 3.
 | Ethernet             | Yes (only on the B and B+)      |
 | WiFi                 | Requires USB WiFi dongle        |
 | Bluetooth            | Not supported                   |
+| Audio                | HDMI/Stereo out                 |
 
 ## Using
 
@@ -66,6 +67,28 @@ If you are unsure what driver your WiFi dongle requires, run Raspbian and
 configure WiFi for your device. At a shell prompt, run `lsmod` to see which
 drivers are loaded.  Running `dmesg` may also give a clue. When using `dmesg`,
 reinsert the USB dongle to generate new log messages if you don't see them.
+
+## Audio
+
+The Raspberry Pi has many options for audio output. This system supports the
+HDMI and stereo audio jack output. The Linux ALSA drivers are used for audio
+output.
+
+To try it out, run:
+
+```elixir
+:os.cmd('espeak -ven+f5 -k5 -w /tmp/out.wav Hello')
+:os.cmd('aplay -q /tmp/out.wav')
+```
+
+The general Raspberry Pi audio documentation mostly applies to Nerves. For
+example, to force audio out the HDMI port, run:
+
+```elixir
+:os.cmd('amixer cset numid=3 2')
+```
+
+Change the last argument to `amixer` to `1` to output to the stereo output jack.
 
 ## Provisioning devices
 
