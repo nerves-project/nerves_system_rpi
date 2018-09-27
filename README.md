@@ -22,7 +22,7 @@ This is not the configuration for the Raspberry Pi 2 or 3.
 | CPU                  | 700 MHz ARM1176JZF-S for A+, B, and B+, 1 GHz ARM1176JZF-S for the Zero  |
 | Memory               | 256 MB for rev 1 boards, 512 MB for rev 2 and the Zero  |
 | Storage              | MicroSD                         |
-| Linux kernel         | 4.4 w/ Raspberry Pi patches     |
+| Linux kernel         | 4.14 w/ Raspberry Pi patches    |
 | IEx terminal         | HDMI and USB keyboard (can be changed to UART)   |
 | GPIO, I2C, SPI       | Yes - Elixir ALE                |
 | ADC                  | No                              |
@@ -108,7 +108,7 @@ the application partition so reformatting the application partition will not
 lose the serial number or any other data stored in this block.
 
 Additional key value pairs can be provisioned by overriding the default provisioning.conf
-file location by setting the environment variable 
+file location by setting the environment variable
 `NERVES_PROVISIONING=/path/to/provisioning.conf`. The default provisioning.conf
 will set the `nerves_serial_number`, if you override the location to this file,
 you will be responsible for setting this yourself.
