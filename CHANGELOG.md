@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.7.1
+
+* Improvements
+  * Bump C compiler options to `-O2` from `-Os`. This provides a small, but
+    measurable performance improvement (500ms at boot in a trivial project
+    tested on [nerves_system_rpi0](https://github.com/nerves-project/nerves_system_rpi0)).
+
+* Updated dependencies
+  * [nerves_system_br v1.7.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.7.1)
+
 ## v1.7.0
 
 This release bumps the Linux kernel to 4.19.25. This change had an impact on how
