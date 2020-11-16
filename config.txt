@@ -35,4 +35,4 @@ dtoverlay=ramoops
 # Enable the UART via GPIOs 14 and 15 (ttyAMA0) on the RPi0 W.
 # See https://www.raspberrypi.org/documentation/configuration/uart.md.
 enable_uart=1
-dtoverlay=pi3-miniuart-bt
+dtoverlay=miniuart-bt
