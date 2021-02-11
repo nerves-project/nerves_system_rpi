@@ -1,5 +1,28 @@
 # Changelog
 
+## v1.14.0
+
+This release updates to Buildroot 2020.11.2, GCC 10.2 and OTP 23.2.4.
+
+When migrating custom systems based, please be aware of the following important
+changes:
+
+* There's a new `getrandom` syscall that is made early in BEAM startup. This
+  blocks the BEAM before `rngd` can be started to provide entropy. The
+  workaround is to start `rngd` from `erlinit`. See `erlinit.config`.
+* Hardware float is enabled (`eabihf`). If you have pre-built binaries, you will
+  need to compile them since previous `eabi` was used.
+* The GCC 10.2.0 toolchain has a different name that calls out "nerves" as the
+  vendor and the naming is now more consistent with other toolchain providers.
+* Experimental support for tooling that requires more information about the
+  target has been added. The initial support focuses on zigler.
+
+* Updated dependencies
+  * [nerves_system_br: bump to v1.14.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.14.4)
+  * [Buildroot 2020.11.2](http://lists.busybox.net/pipermail/buildroot/2021-January/302574.html)
+  * [Erlang/OTP 23.2.4](https://erlang.org/download/OTP-23.2.4.README)
+  * [Nerves toolchains 1.4.1](https://github.com/nerves-project/toolchains/releases/tag/v1.4.1)
+
 ## v1.13.3
 
 This is a bug fix release and contains no major changes.
@@ -208,8 +231,6 @@ https://github.com/fhunleth/rpi_fb_capture/issues/2 for details.
   * Linux 4.19.58 with patches from the Raspberry Pi Foundation
 
 ## v1.8.0
-
-This release
 
 This release updates Erlang to OTP 22 and gcc from version 7.3.0 to 8.3.0.
 See the nerves_system_br and toolchain release notes for more information.
