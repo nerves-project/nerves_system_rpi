@@ -22,7 +22,7 @@ This is not the configuration for the Raspberry Pi 2 or 3.
 | CPU                  | 700 MHz ARM1176JZF-S for A+, B, and B+, 1 GHz ARM1176JZF-S for the Zero  |
 | Memory               | 256 MB for rev 1 boards, 512 MB for rev 2 and the Zero  |
 | Storage              | MicroSD                         |
-| Linux kernel         | 4.19 w/ Raspberry Pi patches    |
+| Linux kernel         | 5.4 w/ Raspberry Pi patches     |
 | IEx terminal         | HDMI and USB keyboard (can be changed to UART)   |
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
 | ADC                  | No                              |
@@ -43,7 +43,7 @@ for more information.
 
 If you need custom modifications to this system for your device, clone this
 repository and update as described in [Making custom
-systems](https://hexdocs.pm/nerves/systems.html#customizing-your-own-nerves-system)
+systems](https://hexdocs.pm/nerves/customizing-systems.html).
 
 ## Supported USB WiFi devices
 
@@ -74,18 +74,11 @@ The Raspberry Pi has many options for audio output. This system supports the
 HDMI and stereo audio jack output. The Linux ALSA drivers are used for audio
 output.
 
-To try it out, run:
-
-```elixir
-:os.cmd('espeak -ven+f5 -k5 -w /tmp/out.wav Hello')
-:os.cmd('aplay -q /tmp/out.wav')
-```
-
 The general Raspberry Pi audio documentation mostly applies to Nerves. For
 example, to force audio out the HDMI port, run:
 
 ```elixir
-:os.cmd('amixer cset numid=3 2')
+cmd("amixer cset numid=3 2")
 ```
 
 Change the last argument to `amixer` to `1` to output to the stereo output jack.
@@ -130,8 +123,8 @@ in a U-boot environment block. This is a special region that is separate from
 the application partition so reformatting the application partition will not
 lose the serial number or any other data stored in this block.
 
-Additional key value pairs can be provisioned by overriding the default provisioning.conf
-file location by setting the environment variable
+Additional key value pairs can be provisioned by overriding the default
+provisioning.conf file location by setting the environment variable
 `NERVES_PROVISIONING=/path/to/provisioning.conf`. The default provisioning.conf
 will set the `nerves_serial_number`, if you override the location to this file,
 you will be responsible for setting this yourself.
