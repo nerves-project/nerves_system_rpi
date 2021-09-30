@@ -1,4 +1,4 @@
-# Raspberry Pi Model A+, B, and B+
+# Raspberry Pi Model Zero, A+, B, and B+
 
 [![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_rpi.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_rpi)
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_rpi.svg "Hex version")](https://hex.pm/packages/nerves_system_rpi)
@@ -30,8 +30,8 @@ This is not the configuration for the Raspberry Pi 2 or 3.
 | UART                 | 1 available - `ttyAMA0`         |
 | Camera               | Yes - via rpi-userland          |
 | Ethernet             | Yes (only on the B and B+)      |
-| WiFi                 | Requires USB WiFi dongle        |
-| Bluetooth            | Not supported                   |
+| WiFi                 | RPi 0W or some USB WiFi dongles |
+| Bluetooth            | [Supported on the Pi Zero W](#bluetooth) |
 | Audio                | HDMI/Stereo out                 |
 
 ## Using
@@ -60,6 +60,13 @@ If you are unsure what driver your WiFi dongle requires, run Raspbian and
 configure WiFi for your device. At a shell prompt, run `lsmod` to see which
 drivers are loaded.  Running `dmesg` may also give a clue. When using `dmesg`,
 reinsert the USB dongle to generate new log messages if you don't see them.
+
+## Bluetooth
+
+[BlueHeronTransportUART](https://github.com/blue-heron/blue_heron_transport_uart)
+supports bluetooth on the Pi Zero W using `ttyS0`.
+See details
+[here](https://github.com/nerves-project/nerves_system_rpi0/issues/224#issuecomment-913799838).
 
 ## Audio
 
