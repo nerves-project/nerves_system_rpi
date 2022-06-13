@@ -22,7 +22,7 @@ This is not the configuration for the Raspberry Pi 2 or 3.
 | CPU                  | 700 MHz ARM1176JZF-S for A+, B, and B+, 1 GHz ARM1176JZF-S for the Zero  |
 | Memory               | 256 MB for rev 1 boards, 512 MB for rev 2 and the Zero  |
 | Storage              | MicroSD                         |
-| Linux kernel         | 5.10 w/ Raspberry Pi patches    |
+| Linux kernel         | 5.15 w/ Raspberry Pi patches    |
 | IEx terminal         | HDMI and USB keyboard (can be changed to UART)   |
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
 | ADC                  | No                              |
