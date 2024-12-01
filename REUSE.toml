@@ -15,7 +15,7 @@ SPDX-License-Identifier = "CC0-1.0"
 
 # Buildroot derived or related files
 # NOTE: packages here proactively have copyright assigned to the Buildroot
-# developers to avoid worrying up copyright assignment when upstreaming.
+# developers to avoid worrying about copyright assignment when upstreaming.
 [[annotations]]
 path = [
  "Config.in",
@@ -55,7 +55,8 @@ SPDX-License-Identifier = "CC0-1.0"
 [[annotations]]
 path = [
  "busybox.fragment",
- "cmdline.txt",
+ "cmdline-a.txt",
+ "cmdline-b.txt",
  "config.txt",
  "rootfs_overlay/etc/boardid.config",
  "rootfs_overlay/etc/erlinit.config",

@@ -4,7 +4,7 @@
 # configuration to pull in a replacement.
 #
 # Useful links:
-# https://www.raspberrypi.org/documentation/configuration/config-txt/README.md
+# http://rpf.io/configtxt
 # https://www.raspberrypi.org/documentation/configuration/device-tree.md
 # https://github.com/raspberrypi/documentation/blob/master/configuration/device-tree.md
 # https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README
