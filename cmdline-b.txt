@@ -1,0 +1,2 @@
+# See cmdline-a.txt
+root=/dev/mmcblk0p6 rootwait console=serial0,115200 console=tty1 fbcon=scrollback:1024k consoleblank=0
