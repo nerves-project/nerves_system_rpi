@@ -1,7 +1,8 @@
 # Raspberry Pi Model Zero, A+, B, and B+
 
-[![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_rpi.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_rpi)
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_rpi.svg "Hex version")](https://hex.pm/packages/nerves_system_rpi)
+[![CI](https://github.com/nerves-project/nerves_system_rpi/actions/workflows/ci.yml/badge.svg)](https://github.com/nerves-project/nerves_system_rpi/actions/workflows/ci.yml)
+[![REUSE status](https://api.reuse.software/badge/github.com/nerves-project/nerves_system_rpi)](https://api.reuse.software/info/github.com/nerves-project/nerves_system_rpi)
 
 This is the base Nerves System configuration for the Raspberry Pi A+, B,
 and B+. It will also work with the Raspberry Pi Zero, but usually
