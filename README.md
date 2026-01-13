@@ -1,3 +1,8 @@
+<!--
+  SPDX-FileCopyrightText: 2016 Frank Hunleth
+  SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Raspberry Pi Model Zero, A+, B, and B+
 
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_rpi.svg "Hex version")](https://hex.pm/packages/nerves_system_rpi)

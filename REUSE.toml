@@ -2,10 +2,6 @@ version = 1
 
 [[annotations]]
 path = [
- ".formatter.exs",
- ".github/CODEOWNERS",
- ".gitignore",
- "CHANGELOG.md",
  "nerves_defconfig",
  "NOTICE",
  "REUSE.toml",
@@ -16,14 +12,6 @@ path = [
 precedence = "aggregate"
 SPDX-FileCopyrightText = "None"
 SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
-path = [
- "README.md"
-]
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2016 Frank Hunleth"
-SPDX-License-Identifier = "CC-BY-4.0"
 
 # Buildroot derived or related files
 # NOTE: packages here proactively have copyright assigned to the Buildroot
