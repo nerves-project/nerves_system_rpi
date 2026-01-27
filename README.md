@@ -9,6 +9,9 @@
 [![CI](https://github.com/nerves-project/nerves_system_rpi/actions/workflows/ci.yml/badge.svg)](https://github.com/nerves-project/nerves_system_rpi/actions/workflows/ci.yml)
 [![REUSE status](https://api.reuse.software/badge/github.com/nerves-project/nerves_system_rpi)](https://api.reuse.software/info/github.com/nerves-project/nerves_system_rpi)
 
+*This is the `main` branch. If you are customizing a `v1.x` system, please see
+the `maint-v1.x` branch.*
+
 This is the base Nerves System configuration for the Raspberry Pi A+, B,
 and B+. It will also work with the Raspberry Pi Zero, but usually
 [nerves_system_rpi0](https://github.com/nerves-project/nerves_system_rpi0) is
