@@ -6,10 +6,11 @@ name: CI
 on: [push]
 
 env:
-  OTP_VERSION: 28.3
-  ELIXIR_VERSION: 1.19.4-otp-28
+  OTP_VERSION: 28.3.1
+  ELIXIR_VERSION: 1.19.5-otp-28
   NERVES_BOOTSTRAP_VERSION: 1.14.0
 
+permissions:
   id-token: write
   contents: read
 
