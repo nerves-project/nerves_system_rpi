@@ -24,3 +24,4 @@ erl_crash.dump
 /archive.log
 /.nerves
 /fwup.conf
+/checksum.exs
